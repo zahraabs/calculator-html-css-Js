@@ -61,8 +61,9 @@
     font-size: 16px;
     border: none;
     outline: none;
-    text-align: center;
-    vertical-align: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 4px;
     box-shadow: 5px 5px 8px #00000020,
         -5px -5px 8px var(--whiteColor);
