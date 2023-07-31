@@ -15,43 +15,44 @@
             </div>
             <div class="buttons">
                 <div class="row">
-                    <div class="btn">CE</div>
-                    <div class="btn" onclick="Factorial(screen.value)">X!</div>
-                    <div class="btn">(</div>
-                    <div class="btn">)</div>
-                    <div class="btn">%</div>
-                    <div class="btn">AC</div>
+                    <button id="ce" onclick="backSpace()">CE</button>
+                    <button onclick="Factorial(screen.value)">x!</button>
+                    <button class="btn">(</button>
+                    <button class="btn">)</button>
+                    <button class="btn">%</button>
+                    <button id="ac" onclick="screen.value = ''">AC</button>
                 </div>   
                   <div class="row">
-                    <div class="btn" onclick="sin()">sin</div>
-                    <div class="btn">pi</div>
-                    <div class="btn">7</div>
-                    <div class="btn">8</div>
-                    <div class="btn">9</div>
-                    <div class="btn">÷</div>
-                </div>     <div class="row">
-                    <div class="btn" onclick="cos">cos</div>
-                    <div class="btn">log</div>
-                    <div class="btn">4</div>
-                    <div class="btn">5</div>
-                    <div class="btn">6</div>
-                    <div class="btn">x</div>
+                    <button  onclick="sin()">sin</button>
+                    <button  onclick="pi()">π</button>
+                    <button class="btn">7</button>
+                    <button class="btn">8</button>
+                    <button class="btn">9</button>
+                    <button class="btn">÷</button>
                 </div>    
                  <div class="row">
-                    <div class="btn" onclick="tan()">tan</div>
-                    <div class="btn">root</div>
-                    <div class="btn">1</div>
-                    <div class="btn">2</div>
-                    <div class="btn">3</div>
-                    <div class="btn">-</div>
+                    <button onclick="cos()">cos</button>
+                    <button  onclick="log()">log</button>
+                    <button class="btn">4</button>
+                    <button class="btn">5</button>
+                    <button class="btn">6</button>
+                    <button class="btn">x</button>
+                </div>    
+                 <div class="row">
+                    <button onclick="tan()">tan</button>
+                    <button onclick="sqrt()">√</button>
+                    <button class="btn">1</button>
+                    <button class="btn">2</button>
+                    <button class="btn">3</button>
+                    <button class="btn">-</button>
                 </div>
                  <div class="row">
-                    <div class="btn">e</div>
-                    <div class="btn" onclick="pow()">x^y</div>
-                    <div class="btn">0</div>
-                    <div class="btn">.</div>
-                    <div class="btn" onclick="screen.value = eval(screen.value)">=</div>
-                    <div class="btn">+</div>
+                    <button onclick="e()">e</button>
+                    <button onclick="pow()">x <span style="position: relative; bottom: 5px ; right: 0;"> y</span> </button>
+                    <button class="btn">0</button>
+                    <button class="btn">.</button>
+                    <button onclick="screen.value = eval(screen.value)">=</button>
+                    <button class="btn">+</button>
                 </div>
             </div>
         </div>

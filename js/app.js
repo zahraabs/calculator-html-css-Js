@@ -46,3 +46,7 @@ function Factorial(number) {
     }
     screen.value = result;
 }
+
+function backSpace() {
+    screen.value = screen.value.substr(0 , screen.value.length-1)
+}
