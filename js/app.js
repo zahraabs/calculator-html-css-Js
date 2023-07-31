@@ -1,14 +1,14 @@
 let screen = document.querySelector("#screen");
 let btn = document.querySelectorAll(".btn");
 
-for ( item of btn) {
-    item.addEventListener("click" , function(e){
+for (item of btn) {
+    item.addEventListener("click", function (e) {
         let btnText = e.target.innerText;
         if (btnText == 'x') {
             btnText = '*'
         }
         if (btnText == '÷') {
-            btnText ='/'
+            btnText = '/'
         }
         screen.value += btnText;
     })
@@ -24,13 +24,18 @@ function tan() {
     screen.value = Math.tan(screen.value);
 }
 function pow() {
-    screen.value = Math.pow(screen.value , 2);
+    screen.value = Math.pow(screen.value, 2);
 }
 function sqrt() {
-    screen.value = Math.sqrt(screen.value , 2);
+  screen.value = Math.sqrt(screen.value, 2);
+    
 }
 function log() {
-    screen.value = Math.log(screen.value);
+    if (screen.value <= 0) {
+        return screen.value = "Error"
+    } else{
+    screen.value = Math.log10(screen.value);
+    }
 }
 function pi() {
     screen.value = 3.141592653589;
@@ -41,12 +46,17 @@ function e() {
 
 function Factorial(number) {
     let result = 1;
-    for (let i = 0; i <number; i++) {
-      result *= i +1; 
+    if (number < 0) {
+        return screen.value = "Error";
+    } 
+    
+    for (let i = 0; i < number; i++) {
+        result *= i + 1;
     }
     screen.value = result;
 }
 
 function backSpace() {
-    screen.value = screen.value.substr(0 , screen.value.length-1)
+    screen.value = screen.value.substr(0, screen.value.length - 1)
 }
+
