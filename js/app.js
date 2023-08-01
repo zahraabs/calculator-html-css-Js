@@ -27,15 +27,18 @@ function pow() {
     screen.value = Math.pow(screen.value, 2);
 }
 function sqrt() {
-  screen.value = Math.sqrt(screen.value, 2);
-    
+    if (screen.value <= 0) {
+        return screen.value = "Error"
+    }
+    screen.value = Math.sqrt(screen.value, 2);
+
 }
 function log() {
     if (screen.value <= 0) {
         return screen.value = "Error"
-    } else{
-    screen.value = Math.log10(screen.value);
     }
+    screen.value = Math.log10(screen.value);
+
 }
 function pi() {
     screen.value = 3.141592653589;
@@ -48,8 +51,8 @@ function Factorial(number) {
     let result = 1;
     if (number < 0) {
         return screen.value = "Error";
-    } 
-    
+    }
+
     for (let i = 0; i < number; i++) {
         result *= i + 1;
     }
