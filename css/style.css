@@ -1,61 +1,62 @@
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 :root {
-    --backgroundColor: #ecf0f3;
-    --boxShadow: #cbced1;
-    --whiteColor: #ffffff;
+    --background-Color: #ecf0f3;
+    --box-Shadow: #cbced1;
+    --white-Color: #ffffff;
 }
 
+
 .container {
+    max-width: 1400px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: var(--backgroundColor);
+    height: 100vh;
+    background-color: var(--background-Color);
 }
 
 .box {
-    width: 45%;
     height: 45vh;
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 12px 12px 20px var(--boxShadow),
-        -12px -12px 20px var(--whiteColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .2rem;
+    box-shadow: 12px 12px 20px var(--box-Shadow),
+        -12px -12px 20px var(--white-Color);
+}
+
+.display {
+    width: 99%;
+    display: flex;
+    justify-content: center;
 }
 
 .display #screen {
-    width: 97%;
+    width: 100%;
     height: 70px;
     font-size: 35px;
     outline: none;
     border: none;
     text-align: right;
     padding-right: 10px;
-    background-color: var(--backgroundColor);
+    background-color: var(--background-Color);
     border-radius: 6px;
-    box-shadow: inset 8px 8px 8px var(--boxShadow),
-        inset -8px -8px 8px var(--whiteColor);
+    box-shadow: inset 8px 8px 8px var(--box-Shadow),
+        inset -8px -8px 8px var(--white-Color);
 }
 
-.row {
-    display: flex;
-}
-
-.buttons {
-    width: 100%;
-    margin: .2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-
-.buttons .row button{
+button {
     width: 80px;
     height: 30px;
     margin: 5px;
@@ -67,31 +68,135 @@
     justify-content: center;
     border-radius: 4px;
     box-shadow: 5px 5px 8px #00000020,
-        -5px -5px 8px var(--whiteColor);
+        -5px -5px 8px var(--white-Color);
     transition: 0.1s linear;
 }
 
-.buttons .row button:hover{
-    box-shadow:inset 5px 5px 8px rgba(16, 16, 16, 0.1),
-    inset -5px -5px 8px var(--whiteColor);
+button:hover {
+    box-shadow: inset 5px 5px 8px rgba(16, 16, 16, 0.1),
+        inset -5px -5px 8px var(--white-Color);
 }
 
-#ac{
+.buttons {
+    height: calc(100% - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.advancedCalculate {
+    width: 33.33333%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.numbersAndActions {
+    width: 66.6666%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#ac {
     background: #ff3399;
-    color: var(--whiteColor);
+    color: var(--white-Color);
 }
 
-#ac:hover{
-    box-shadow:inset 5px 5px 8px #e60073,
-    inset -5px -5px 8px #ff3399;
+#ac:hover {
+    box-shadow: inset 5px 5px 8px #e60073,
+        inset -5px -5px 8px #ff3399;
 }
 
-#ce{
+#ce {
     background: #33beff;
-    color: var(--whiteColor);
+    color: var(--white-Color);
 }
 
-#ce:hover{
-    box-shadow:inset 5px 5px 8px #0189d8,
-    inset -5px -5px 8px #33beff;
+#ce:hover {
+    box-shadow: inset 5px 5px 8px #0189d8,
+        inset -5px -5px 8px #33beff;
+}
+
+.CeMobile,
+.SqrtMobile {
+    display: none;
+}
+
+.Column {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*  Media 900px  */
+
+@media(max-width:900px) {
+
+    .container {
+        height: 100vh;
+    }
+
+    .box {
+        height: 55vh;
+    }
+
+    button {
+        width: 70px;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+
+    .numbersAndActions {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .advancedCalculate,
+    .OpenParantez,
+    .CloseParantez {
+        display: none;
+    }
+
+    .CeMobile,
+    .SqrtMobile {
+        display: inline-block;
+    }
+}
+
+
+/* Media 400px */
+@media(max-width:400px) {
+    .box {
+        width: 85%;
+        height: 55vh;
+    }
+
+    button {
+        width: 45px;
+    }
+}
+
+
+/* Media 300px */
+
+@media(max-width:300px) {
+    .box {
+        width: 85%;
+        height: 55vh;
+    }
+
+    button {
+        width: 32px;
+    }
 }

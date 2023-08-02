@@ -41,10 +41,10 @@ function log() {
 
 }
 function pi() {
-    screen.value = 3.141592653589;
+    screen.value = Math.PI;
 }
 function e() {
-    screen.value = 2.718281828459045;
+    screen.value = Math.E;
 }
 
 function Factorial(number) {

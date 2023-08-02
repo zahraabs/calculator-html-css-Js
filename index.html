@@ -9,56 +9,75 @@
   <body>
     <div class="container">
       <div class="box">
-        <div class="display">
-          <input id="screen" type="text" placeholder="0" />
-        </div>
-        <div class="buttons">
-          <div class="row">
-            <button id="ce" onclick="backSpace()">CE</button>
-            <button onclick="Factorial(screen.value)">x!</button>
-            <button class="btn">(</button>
-            <button class="btn">)</button>
-            <button onclick="screen.value = screen.value / 100">%</button>
-            <button id="ac" onclick="screen.value = ''">AC</button>
+
+          <div class="display">
+              <input id="screen" type="text" placeholder="0" />
           </div>
-          <div class="row">
-            <button onclick="sin()">sin</button>
-            <button onclick="pi()">π</button>
-            <button class="btn">7</button>
-            <button class="btn">8</button>
-            <button class="btn">9</button>
-            <button class="btn">÷</button>
+
+          <div class="buttons">
+              <div class="advancedCalculate">
+                  
+                  <div class=" Column FirstColumn">
+                      <button id="ce" onclick="backSpace()">CE</button>
+                      <button onclick="sin()">sin</button>
+                      <button onclick="cos()">cos</button>
+                      <button onclick="tan()">tan</button>
+                      <button onclick="e()">e</button>
+                  </div>
+
+                  <div class=" Column SecondColumn">
+                      <button onclick="Factorial(screen.value)">x!</button>
+                      <button onclick="pi()">π</button>
+                      <button onclick="log()">log</button>
+                      <button onclick="sqrt()">√</button>
+                      <button onclick="pow()">
+                          x<sup>2</sup>
+                      </button>
+                  </div>
+
+              </div>
+
+              <div class="numbersAndActions">
+                  <div class=" Column FirstColumn">
+                      <button id="ce" onclick="backSpace()" class="CeMobile">CE</button>
+                      <button class="btn OpenParantez">(</button>
+                      <button class="btn">7</button>
+                      <button class="btn">4</button>
+                      <button class="btn">1</button>
+                      <button class="btn">0</button>
+                  </div>
+
+                  <div class=" Column SecondColumn">
+                      <button class="btn CloseParantez ">)</button>
+                      <button class="SqrtMobile" onclick="sqrt()" >√</button>
+                      <button class="btn">8</button>
+                      <button class="btn">5</button>
+                      <button class="btn">2</button>
+                      <button class="btn">.</button>
+                  </div>
+
+
+                  <div class=" Column ThirdColumn">
+                      <button onclick="screen.value = screen.value / 100">%</button>
+                      <button class="btn">9</button>
+                      <button class="btn">6</button>
+                      <button class="btn">3</button>
+                      <button onclick="screen.value = eval(screen.value)">=</button>
+                  </div>
+
+
+                  <div class=" Column FourthColumn">
+                      <button id="ac" onclick="screen.value = ''">AC</button>
+                      <button class="btn">÷</button>
+                      <button class="btn">x</button>
+                      <button class="btn">-</button>
+                      <button class="btn">+</button>
+                  </div>
+
+              </div>
           </div>
-          <div class="row">
-            <button onclick="cos()">cos</button>
-            <button onclick="log()">log</button>
-            <button class="btn">4</button>
-            <button class="btn">5</button>
-            <button class="btn">6</button>
-            <button class="btn">x</button>
-          </div>
-          <div class="row">
-            <button onclick="tan()">tan</button>
-            <button onclick="sqrt()">√</button>
-            <button class="btn">1</button>
-            <button class="btn">2</button>
-            <button class="btn">3</button>
-            <button class="btn">-</button>
-          </div>
-          <div class="row">
-            <button onclick="e()">e</button>
-            <button onclick="pow()">
-              x
-              <span style="position: relative; bottom: 5px; right: 0"> 2</span>
-            </button>
-            <button class="btn">0</button>
-            <button class="btn">.</button>
-            <button onclick="screen.value = eval(screen.value)">=</button>
-            <button class="btn">+</button>
-          </div>
-        </div>
       </div>
-    </div>
+  </div>
     <script src="./js/app.js"></script>
   </body>
 </html>
