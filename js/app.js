@@ -10,23 +10,30 @@ for (item of btn) {
         if (btnText == '÷') {
             btnText = '/'
         }
+        if (screen.value.length === 0 && isOperator(btnText)) return;
+        if (isOperator(btnText) && doseEndsWithOperator(screen.value)) return;
         screen.value += btnText;
     })
 }
 
 function sin() {
+    calculate();
     screen.value = Math.sin(screen.value);
 }
 function cos() {
+    calculate();
     screen.value = Math.cos(screen.value);
 }
 function tan() {
+    calculate();
     screen.value = Math.tan(screen.value);
 }
 function pow() {
+    calculate();
     screen.value = Math.pow(screen.value, 2);
 }
 function sqrt() {
+    calculate();
     if (screen.value <= 0) {
         return screen.value = "Error"
     }
@@ -34,6 +41,7 @@ function sqrt() {
 
 }
 function log() {
+    calculate();
     if (screen.value <= 0) {
         return screen.value = "Error"
     }
@@ -48,6 +56,7 @@ function e() {
 }
 
 function Factorial(number) {
+    calculate();
     let result = 1;
     if (number < 0) {
         return screen.value = "Error";
@@ -63,3 +72,26 @@ function backSpace() {
     screen.value = screen.value.substr(0, screen.value.length - 1)
 }
 
+function calculate() {
+    if (screen.value === "") return;
+    if (screen.value.includes(")") || screen.value.includes("(")) {
+        if (!/\([^)]*\)|\[[^\]]*\]/g.test(screen.value)) {
+            screen.value = "Error";
+            return;
+        }
+    }
+    screen.value = eval(screen.value);
+}
+
+function doseEndsWithOperator(str) {
+    return (
+        str.endsWith("+") ||
+        str.endsWith("-") ||
+        str.endsWith("/") ||
+        str.endsWith("*")
+    );
+}
+
+function isOperator(str) {
+    return str === "+" || str === "-" || str === "/" || str === "*";
+}
