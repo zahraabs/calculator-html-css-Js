@@ -90,14 +90,13 @@ function calculate() {
 function doseEndsWithOperator(str) {
     return (
         str.endsWith("+") ||
-        str.endsWith("-") ||
         str.endsWith("/") ||
         str.endsWith("*")
     );
 }
 
 function isOperator(str) {
-    return str === "+" || str === "-" || str === "/" || str === "*";
+    return str === "+" || str === "/" || str === "*";
 }
 
 // validation for sin , cos ,tan and pow
