@@ -30,9 +30,9 @@ function tan() {
 }
 
 function pow() {
-    calculate();
-    screen.value = Math.pow(screen.value, 2);
+    calculateTrig(Math.pow)
 }
+
 function sqrt() {
     calculate();
     if (screen.value <= 0) {
@@ -60,13 +60,14 @@ function e() {
 
 function Factorial(number) {
     calculate();
-    let result = 1;
-    if (number < 0) {
-        return screen.value = "Error";
+    if (isNaN(number) || number < 0) {
+        screen.value = "Error";
+        return;
     }
-
+    
+    let result = 1;
     for (let i = 0; i < number; i++) {
-        result *= i + 1;
+        result *= i +1;
     }
     screen.value = result;
 }
@@ -99,7 +100,7 @@ function isOperator(str) {
     return str === "+" || str === "-" || str === "/" || str === "*";
 }
 
-// validation for sin , cos and tan
+// validation for sin , cos ,tan and pow
 function calculateTrig(func) {
     calculate();
     let value = parseFloat(screen.value);
