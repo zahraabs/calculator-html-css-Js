@@ -30,12 +30,13 @@ function tan() {
 }
 
 function pow() {
-    calculateTrig(Math.pow)
+    calculate();
+    screen.value = Math.pow(screen.value , 2)
 }
 
 function sqrt() {
     calculate();
-    if (screen.value <= 0) {
+    if (screen.value <= 0 || isNaN(screen.value)) {
         return screen.value = "Error"
     }
     screen.value = Math.sqrt(screen.value, 2);
@@ -44,7 +45,7 @@ function sqrt() {
 
 function log() {
     calculate();
-    if (screen.value <= 0) {
+    if (screen.value <= 0 ||  isNaN(screen.value)) {
         return screen.value = "Error"
     }
     screen.value = Math.log10(screen.value);
