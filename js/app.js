@@ -141,6 +141,15 @@ function isValidParentheses(expression) {
 
 
 // for dark and light theme
+window.addEventListener("load" ,function(){
+    let getTheme = this.localStorage.getItem("mode");
+    if (getTheme === "dark") {
+        darkMode();
+    }else if (getTheme === "light"){
+        lightMode()
+    }
+})
+
 switchBox.addEventListener("click" , function(){
     if (lightTheme) {
         darkMode();
