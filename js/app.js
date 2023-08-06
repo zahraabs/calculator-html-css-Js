@@ -1,6 +1,10 @@
 // make variables
 let screen = document.querySelector("#screen");
 let btn = document.querySelectorAll(".btn");
+let switchBox = document.querySelector(".switch");
+let body = document.querySelector("body");
+
+let lightTheme = true;
 
 for (item of btn) {
     item.addEventListener("click", function (e) {
@@ -134,3 +138,25 @@ function isValidParentheses(expression) {
   
     return parenthesesStack.length === 0; // Check if all opening parentheses have been closed
   }
+
+
+// for dark and light theme
+switchBox.addEventListener("click" , function(){
+    if (lightTheme) {
+        darkMode();
+    }else{
+        lightMode()
+    }
+})
+
+function darkMode() {
+    lightTheme = false;
+    localStorage.setItem("mode" , "dark");
+    body.classList.toggle("dark");
+}
+
+function lightMode() {
+    lightTheme = true;
+    localStorage.setItem("mode" , 'light');
+    body.classList.remove("dark");
+}

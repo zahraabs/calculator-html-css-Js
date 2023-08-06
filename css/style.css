@@ -20,8 +20,48 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
     background-color: var(--background-Color);
 }
+
+.darkLight{
+    position: absolute;
+    top: 90px;
+}
+
+.switch {
+    width: 80px;
+    height: 40px;
+    position: relative;
+    left: 10px;
+    border-radius: 100%;
+    background-color: var(--box-Shadow);
+}
+
+.switch .flicker {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    border-radius: 100%;
+    transition: 0.3s;
+    box-shadow: inset 4px 4px 4px rgb(255, 255, 255), inset -4px -4px 4px rgb(195, 193, 198 / 90%);
+    background-color: #000000;
+}
+
+
+.switch .moon {
+    width: 20px;
+    height: 20px;
+    box-shadow: 4px 4px 0 0 rgb(0, 0, 0);
+    position: absolute;
+    top: 5px;
+    left: 45px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
 
 .box {
     height: 45vh;
@@ -32,8 +72,8 @@
     justify-content: flex-start;
     align-items: center;
     gap: .2rem;
-    box-shadow: 12px 12px 20px var(--box-Shadow),
-        -12px -12px 20px var(--white-Color);
+    box-shadow: 4px 4px 10px var(--box-Shadow),
+        -4px -4px 10px var(--white-Color);
 }
 
 .display {
@@ -67,14 +107,14 @@ button {
     align-items: center;
     justify-content: center;
     border-radius: 4px;
-    box-shadow: 5px 5px 8px #00000020,
-        -5px -5px 8px var(--white-Color);
+    box-shadow: 3px 3px 8px #00000020,
+        -3px -3px 8px var(--white-Color);
     transition: 0.1s linear;
 }
 
 button:hover {
-    box-shadow: inset 5px 5px 8px rgba(16, 16, 16, 0.1),
-        inset -5px -5px 8px var(--white-Color);
+    box-shadow: inset 5px 5px 10px rgba(16, 16, 16, 0.1),
+        inset -5px -5px 10px var(--white-Color);
 }
 
 .buttons {
@@ -134,7 +174,19 @@ button:hover {
     align-items: center;
 }
 
+.dark button ,.dark .container{
+    background-color: rgb(57, 57, 57);
+    color: rgb(246, 169, 241);
+    transition: 0.3s;
+}
 
+.dark .flicker{
+    transform: translateX(2.5em);
+    background-color: #fcc922;
+}
+.dark .moon{
+    transform: translateX(-2.5em);
+}
 /*  Media 900px  */
 
 @media(max-width:900px) {
