@@ -8,8 +8,13 @@
 
 :root {
     --background-Color: #ecf0f3;
+    --box-Shadow-dark: #646464;
     --box-Shadow: #cbced1;
     --white-Color: #ffffff;
+}
+
+button{
+    cursor: pointer;
 }
 
 
@@ -27,6 +32,7 @@
 .darkLight{
     position: absolute;
     top: 90px;
+    cursor: pointer;
 }
 
 .switch {
@@ -115,6 +121,11 @@ button {
 button:hover {
     box-shadow: inset 5px 5px 10px rgba(16, 16, 16, 0.1),
         inset -5px -5px 10px var(--white-Color);
+}
+
+.dark button:hover {
+	box-shadow: inset 5px 5px 10px rgba(16, 16, 16, 0.1),
+		inset -5px -5px 10px var(--box-Shadow-dark);
 }
 
 .buttons {
