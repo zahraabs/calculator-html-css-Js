@@ -152,7 +152,7 @@ switchBox.addEventListener("click" , function(){
 function darkMode() {
     lightTheme = false;
     localStorage.setItem("mode" , "dark");
-    body.classList.toggle("dark");
+    body.classList.add("dark");
 }
 
 function lightMode() {
