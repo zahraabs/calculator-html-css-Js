@@ -118,6 +118,11 @@ button {
     transition: 0.1s linear;
 }
 
+.dark button {
+	box-shadow: 3px 3px 8px #00000020, -3px -3px 8px var(--box-Shadow-dark);
+	transition: 0.1s linear;
+}
+
 button:hover {
     box-shadow: inset 5px 5px 10px rgba(16, 16, 16, 0.1),
         inset -5px -5px 10px var(--white-Color);
